@@ -246,6 +246,7 @@ func findUser(tx *storage.Connection, query string, args ...interface{}) (*User,
 		return nil, errors.Wrap(err, "error finding user")
 	}
 
+	obj.AppMetaData["roles"] = []string{obj.Role}
 	return obj, nil
 }
 
